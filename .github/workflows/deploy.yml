@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # o la rama que uses como principal
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -27,14 +27,20 @@ jobs:
           node-version: 20
           cache: npm
 
+      # ⬇️ calcula el subpath "/<repo>/"
+      - name: Compute base path
+        run: echo "VITE_BASE=/${GITHUB_REPOSITORY#*/}/" >> $GITHUB_ENV
+
       - name: Install deps
         run: npm ci
 
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE: ${{ env.VITE_BASE }}
 
-      - name: SPA 404 fallback
-        run: cp dist/index.html dist/404.html
+      - name: SPA 404 fallback (opcional)
+        run: cp dist/index.html dist/404.html || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
