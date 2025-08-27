@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig(() => {
-  const base = import.meta.env.VITE_BASE || '/'
+  const base = process.env.VITE_BASE || '/'
 
   return {
     plugins: [react(), tailwindcss()],
