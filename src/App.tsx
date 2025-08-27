@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import {
   ChevronDown,
@@ -75,18 +73,42 @@ export default function PersonalPortfolio() {
 
   const experiences = [
     {
-      title: "Full-Stack Developer",
-      period: "2021 - Present",
+      title: "Desarrollador Web",
+      period: "Enero 2025 - Presente",
       description:
-        "Diseño y desarrollo de aplicaciones web escalables con enfoque en backend robusto y experiencias de usuario modernas.",
-      highlights: ["APIs RESTful", "Cloud Deployment", "Database Design"],
+        "Desarrollo de aplicaciones web para el sector financiero, automatizando procesos internos mediante herramientas de software e inteligencia artificial.",
+      highlights: [
+        "Google Cloud",
+        "Servicios financieros",
+        "Bases de datos",
+        "Firebase",
+        "Diseño de aplicaciones web",
+        "Inteligencia artificial",
+      ], company: "Freelancer",
     },
     {
-      title: "Backend Specialist",
-      period: "2022 - Present",
+      title: "Ingeniero de Soporte en Servicios de Azure AI",
+      period: "Julio 2023 - Diciembre 2024",
       description:
-        "Especialización en arquitecturas serverless y integración de servicios de IA para soluciones empresariales.",
-      highlights: ["Serverless Architecture", "AI Integration", "Performance Optimization"],
+        "Soporte especializado en servicios de inteligencia artificial de Azure, incluyendo ChatGPT, Document AI y otras soluciones empresariales en la nube.",
+      highlights: ["Azure AI", "ChatGPT", "Document AI", "Soporte técnico"],
+      company: "Microsoft",
+    },
+    {
+      title: "Desarrollador Backend",
+      period: "",
+      description:
+        "Desarrollo de microservicios en Python para exponer modelos de IA en Google Cloud Platform, utilizando Docker y gestionando la comunicación y autenticación vía API.",
+      highlights: ["Python", "Microservicios", "Google Cloud", "Docker", "APIs seguras"],
+      company: "Freelancer",
+    },
+    {
+      title: "Desarrollador Backend",
+      period: "",
+      description:
+        "Diseño, programación y despliegue de una API lista para producción en el sitio web corporativo, empleando Laravel y MySQL.",
+      highlights: ["Laravel", "MySQL", "APIs empresariales", "Despliegue en producción"],
+      company: "Denoba SAS",
     },
   ]
 
@@ -135,9 +157,8 @@ export default function PersonalPortfolio() {
           {/* Columna de texto */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 leading-snug">
-              Ezequiel Cruz
               <span className="block bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent">
-                Full-Stack Developer
+                Ingeniero de Software | Soluciones Web, Cloud & Data
               </span>
             </h1>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
@@ -208,11 +229,17 @@ export default function PersonalPortfolio() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-slate-600 leading-relaxed">
-                Soy Ezequiel Cruz, desarrollador Full‑Stack con más de 3 años de experiencia diseñando y construyendo aplicaciones robustas y escalables. Domino tecnologías como React, TypeScript y Firebase, y me apasiona optimizar la experiencia de usuario mediante interfaces minimalistas y accesibles.
+                Soy Ezequiel Cruz, Desarrollador Full-Stack especializado en el diseño y construcción de aplicaciones web multisectoriales,
+                con un enfoque en la creación de soluciones robustas, seguras y fáciles de usar. Trabajo con tecnologías modernas como React, TypeScript y Firebase,
+                aplicando buenas prácticas de arquitectura para garantizar escalabilidad y mantenibilidad.
               </p>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Mi fortaleza radica en crear APIs escalables y desplegarlas en entornos serverless y Kubernetes sobre Google Cloud. Además, integré flujos de automatización con n8n y servicios de IA para resolver retos complejos de procesamiento documental y autenticación segura.
+
+              <p className="text-lg text-slate-600 leading-relaxed mt-4">
+                He liderado la implementación de APIs optimizadas y su despliegue en entornos serverless y Kubernetes sobre Google Cloud.
+                También cuento con experiencia en la integración de servicios de inteligencia artificial y en el desarrollo de flujos de automatización para
+                procesos documentales y validación de datos, ayudando a las organizaciones a mejorar la eficiencia operativa y la toma de decisiones.
               </p>
+
 
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="text-center p-4 bg-slate-50 rounded-lg">
@@ -220,8 +247,8 @@ export default function PersonalPortfolio() {
                   <div className="text-slate-600">Años de Experiencia</div>
                 </div>
                 <div className="text-center p-4 bg-slate-50 rounded-lg">
-                  <div className="text-3xl font-bold text-emerald-600">50+</div>
-                  <div className="text-slate-600">Proyectos Completados</div>
+                  <div className="text-3xl font-bold text-emerald-600">5+</div>
+                  <div className="text-slate-600">Proyectos de impacto</div>
                 </div>
               </div>
             </div>
@@ -294,6 +321,7 @@ export default function PersonalPortfolio() {
                     <div className="bg-gradient-to-r from-slate-100 to-slate-50 rounded-lg p-4 border-l-4 border-cyan-500">
                       <div className="text-sm text-cyan-600 font-semibold">{exp.period}</div>
                       <div className="text-xl font-bold text-slate-800">{exp.title}</div>
+                      <div className="text-slate-500">{exp.company}</div>
                     </div>
                   </div>
                   <div className="md:w-2/3">
@@ -327,18 +355,18 @@ export default function PersonalPortfolio() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <a
-              href="mailto:email@gmail.com"
+              href="mailto:cruzezequiel017@gmail.com"
               className="group bg-slate-700/50 backdrop-blur-sm rounded-2xl p-6 hover:bg-slate-700 transition-all duration-300 transform hover:scale-105"
             >
               <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Mail className="text-white" size={28} />
               </div>
               <h3 className="text-xl font-bold mb-2">Email</h3>
-              <p className="text-slate-300">email@gmail.com</p>
+              <p className="text-slate-300">cruzezequiel017@gmail.com</p>
             </a>
 
             <a
-              href="https://www.linkedin.com/in/name/"
+              href="https://www.linkedin.com/in/cruzezequiel/"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-slate-700/50 backdrop-blur-sm rounded-2xl p-6 hover:bg-slate-700 transition-all duration-300 transform hover:scale-105"
@@ -353,7 +381,7 @@ export default function PersonalPortfolio() {
             </a>
 
             <a
-              href="https://github.com"
+              href="https://github.com/CruzEzequiel"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-slate-700/50 backdrop-blur-sm rounded-2xl p-6 hover:bg-slate-700 transition-all duration-300 transform hover:scale-105"
