@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: process.env.VITE_BASE ?? "/",
+  const base = process.env.VITE_BASE ?? "/";
 })
