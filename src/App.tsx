@@ -190,10 +190,10 @@ export default function PersonalPortfolio() {
           <div className="flex flex-col items-center md:items-start space-y-6">
             {/* Tech stack */}
             <div className="flex flex-wrap gap-5 opacity-90">
-              <img src="/react.svg" alt="React" className="h-8 w-auto" />
-              <img src="/typescript.svg" alt="TypeScript" className="h-8 w-auto" />
-              <img src="/firebase.svg" alt="Firebase" className="h-8 w-auto" />
-              <img src="/gcp.svg" alt="GCP" className="h-8 w-auto" />
+              <img src="./react.svg" alt="React" className="h-8 w-auto" />
+              <img src="./typescript.svg" alt="TypeScript" className="h-8 w-auto" />
+              <img src="./firebase.svg" alt="Firebase" className="h-8 w-auto" />
+              <img src="./gcp.svg" alt="GCP" className="h-8 w-auto" />
             </div>
 
             {/* Socials */}
