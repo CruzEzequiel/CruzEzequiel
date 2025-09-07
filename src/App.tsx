@@ -553,13 +553,6 @@ export default function PersonalPortfolio() {
               </ul>
             </motion.div>
           </div>
-
-          {/* Nota contextual */}
-          <div className="text-center mt-8 text-slate-400 text-sm">
-            {selectedNode
-              ? <>Enfoque actual: <span className="text-slate-200 font-medium">{selectedNode}</span></>
-              : <>Tip: usa los filtros para resaltar un área.</>}
-          </div>
         </div>
       </section>
 
@@ -927,9 +920,6 @@ export function ArchitectureShowcase() {
               </div>
             ))}
           </div>
-          <p className="text-slate-400 text-[10px] mt-3">
-            * Toca cada ícono para ver más detalles en la vista desktop
-          </p>
         </div>
 
         {/* Versión desktop completa */}
