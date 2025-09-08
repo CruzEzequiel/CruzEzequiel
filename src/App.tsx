@@ -312,7 +312,7 @@ export default function PersonalPortfolio() {
             {/* Columna de texto - Colocada primera en móvil para priorizar contenido */}
             <div className="space-y-6 order-1">
               <p className="text-lg text-slate-600 leading-relaxed">
-                Desarrollador Full-Stack especializado en el diseño y construcción de aplicaciones web multisectoriales,
+                Ingeniero de Software especializado en el diseño y construcción de aplicaciones web multisectoriales,
                 con un enfoque en la creación de soluciones robustas, seguras y fáciles de usar.
               </p>
 
