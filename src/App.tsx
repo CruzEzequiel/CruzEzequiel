@@ -20,6 +20,7 @@ export default function PersonalPortfolio() {
   const [selectedNode, setSelectedNode] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
+  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +46,13 @@ export default function PersonalPortfolio() {
   // Cerrar menú móvil al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      const target = event.target as Node
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(target) &&
+        mobileMenuButtonRef.current &&
+        !mobileMenuButtonRef.current.contains(target)
+      ) {
         setMobileMenuOpen(false)
       }
     }
@@ -55,8 +62,13 @@ export default function PersonalPortfolio() {
   }, [])
 
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
-    setMobileMenuOpen(false) // Cerrar menú al navegar
+    const el = document.getElementById(sectionId)
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" })
+      setTimeout(() => setMobileMenuOpen(false), 400)
+    } else {
+      setMobileMenuOpen(false)
+    }
   }
 
   const skills = [
@@ -148,7 +160,7 @@ export default function PersonalPortfolio() {
 
             {/* Menú desktop */}
             <div className="hidden md:flex space-x-6 justify-end w-full">
-              {["home", "architecture", "expertise", "knowledge", "experience", "about", "contact"].map((item) => (
+              {["home", "about", "expertise", "knowledge", "experience", "contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -159,23 +171,22 @@ export default function PersonalPortfolio() {
                 >
                   {item === "home"
                     ? "Inicio"
-                    : item === "architecture"
-                      ? "Arquitectura"
+                    : item === "about"
+                      ? "Acerca"
                       : item === "expertise"
                         ? "Experiencia"
                         : item === "knowledge"
                           ? "Conocimientos"
                           : item === "experience"
                             ? "Trayectoria"
-                            : item === "about"
-                              ? "Acerca"
-                              : "Contacto"}
+                            : "Contacto"}
                 </button>
               ))}
             </div>
 
             {/* Botón de menú móvil */}
             <button
+              ref={mobileMenuButtonRef}
               className="md:hidden p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
@@ -184,47 +195,45 @@ export default function PersonalPortfolio() {
             </button>
           </div>
         </div>
-
-        {/* Menú móvil desplegable */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              ref={mobileMenuRef}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-neutral-900/95 border-t border-white/10 overflow-hidden"
-            >
-              <div className="px-4 py-4 space-y-3">
-                {["home", "architecture", "expertise", "knowledge", "experience", "about", "contact"].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item)}
-                    className={`block w-full text-left py-2 px-3 rounded-lg capitalize ${activeSection === item
-                      ? "bg-white/10 text-cyan-300"
-                      : "text-slate-300 hover:bg-white/5"
-                      }`}
-                  >
-                    {item === "home"
-                      ? "Inicio"
-                      : item === "architecture"
-                        ? "Arquitectura"
-                        : item === "expertise"
-                          ? "Experiencia"
-                          : item === "knowledge"
-                            ? "Conocimientos"
-                            : item === "experience"
-                              ? "Trayectoria"
-                              : item === "about"
-                                ? "Acerca"
-                                : "Contacto"}
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
+
+      {/* Menú móvil desplegable - MOVER FUERA DEL NAV */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            ref={mobileMenuRef}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-neutral-900/95 border-t border-white/10 overflow-hidden fixed top-[64px] left-0 w-full z-40"
+          >
+            <div className="px-4 py-4 space-y-3">
+              {["home", "about", "expertise", "knowledge", "experience", "contact"].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item)}
+                  className={`block w-full text-left py-2 px-3 rounded-lg capitalize ${activeSection === item
+                    ? "bg-white/10 text-cyan-300"
+                    : "text-slate-300 hover:bg-white/5"
+                    }`}
+                >
+                  {item === "home"
+                    ? "Inicio"
+                    : item === "about"
+                      ? "Acerca"
+                      : item === "expertise"
+                        ? "Experiencia"
+                        : item === "knowledge"
+                          ? "Conocimientos"
+                          : item === "experience"
+                            ? "Trayectoria"
+                            : "Contacto"}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Hero - Ajustado para responsive */}
       <section id="home" className="pt-28 md:pt-32 pb-20 relative overflow-hidden">
