@@ -74,36 +74,84 @@ export default function PersonalPortfolio() {
   const skills = [
     {
       category: "Frontend",
-      items: ["React", "TypeScript", "Vite", "JavaScript"],
+      items: ["React", "TypeScript", "Vite", "React Query"],
       icon: Code,
       color: "from-cyan-500 to-blue-500",
     },
     {
       category: "Backend",
-      items: ["Python", "C++", "API Design", "Serverless"],
+      items: ["Python", "FastAPI", "Node.js", "NestJS"],
       icon: Database,
       color: "from-emerald-500 to-teal-500",
     },
     {
-      category: "Cloud & DevOps",
-      items: ["Google Cloud", "Azure", "Docker", "Cloud Run"],
+      category: "Datos & BaaS",
+      items: ["PostgreSQL", "Supabase", "Firebase", "Prisma"],
       icon: Cloud,
       color: "from-purple-500 to-indigo-500",
     },
     {
-      category: "AI & Data",
-      items: ["Gemini API", "ChatGPT", "MySQL", "MongoDB"],
+      category: "Cloud, IA & DevOps",
+      items: ["GCP", "Azure", "Docker", "OpenAI"],
       icon: Brain,
       color: "from-pink-500 to-rose-500",
     },
   ]
 
+  const projectAreas = [
+    {
+      title: "Gestión inmobiliaria",
+      description: "Plataformas web con bases de datos relacionales, automatizaciones, reportes y operación diaria.",
+      icon: Database,
+    },
+    {
+      title: "Finanzas & datos sensibles",
+      description: "Integraciones con APIs financieras y bureaus de crédito en producción, con monitoreo y control de datos.",
+      icon: Shield,
+    },
+    {
+      title: "Producción industrial",
+      description: "Sistemas de gestión de producción con predicción de fechas de entrega mediante modelos de machine learning.",
+      icon: Boxes,
+    },
+    {
+      title: "Ventas asistidas por IA",
+      description: "Agentes conversacionales integrados a flujos comerciales, con captura automática de leads.",
+      icon: Bot,
+    },
+    {
+      title: "Integración de sistemas",
+      description: "Sincronización incremental entre puntos de venta y plataformas propias para mantener datos operativos al día.",
+      icon: Network,
+    },
+    {
+      title: "Automatización financiera",
+      description: "Extracción de datos, conexión con clientes y automatización de procesos financieros internos.",
+      icon: Cloud,
+    },
+  ]
+
   const experiences = [
     {
-      title: "Desarrollador Web",
-      period: "Enero 2025 - Presente",
+      title: "Full Stack Developer - AI Oriented",
+      period: "Octubre 2025 - Actualidad",
       description:
-        "Desarrollo de aplicaciones web para el sector financiero, automatizando procesos internos mediante herramientas de software e inteligencia artificial.",
+        "Desarrollo full stack orientado a productos con inteligencia artificial, integrando frontend, backend, datos, APIs y servicios cloud en entornos remotos de trabajo.",
+      highlights: [
+        "Full Stack",
+        "Inteligencia artificial",
+        "APIs",
+        "Cloud",
+        "Trabajo remoto",
+        "Jornada completa",
+      ],
+      company: "Dataframe AI",
+    },
+    {
+      title: "Desarrollador Web",
+      period: "Enero 2025 - Septiembre 2025",
+      description:
+        "Desarrollo de sistemas web para el sector financiero, automatizando procesos internos e integrando servicios externos, datos e inteligencia artificial.",
       highlights: [
         "Google Cloud",
         "Servicios financieros",
@@ -118,7 +166,7 @@ export default function PersonalPortfolio() {
       title: "Ingeniero de Soporte en Servicios de Azure AI",
       period: "Julio 2023 - Diciembre 2024",
       description:
-        "Soporte especializado en servicios de inteligencia artificial de Azure, incluyendo ChatGPT, Document AI y otras soluciones empresariales en la nube.",
+        "Soporte especializado en servicios empresariales de inteligencia artificial en Azure, incluyendo ChatGPT, Document AI e integraciones cloud para clientes.",
       highlights: ["Azure AI", "ChatGPT", "Document AI", "Soporte técnico"],
       company: "Microsoft",
     },
@@ -126,7 +174,7 @@ export default function PersonalPortfolio() {
       title: "Desarrollador Backend",
       period: "",
       description:
-        "Desarrollo de microservicios en Python para exponer modelos de IA en Google Cloud Platform, utilizando Docker y gestionando la comunicación y autenticación vía API.",
+        "Desarrollo de microservicios en Python para exponer modelos de IA en Google Cloud Platform, utilizando Docker y gestionando comunicación, autenticación e integración vía API.",
       highlights: ["Python", "Microservicios", "Google Cloud", "Docker", "APIs seguras"],
       company: "Freelancer",
     },
@@ -134,7 +182,7 @@ export default function PersonalPortfolio() {
       title: "Desarrollador Backend",
       period: "",
       description:
-        "Diseño, programación y despliegue de una API lista para producción en el sitio web corporativo, empleando Laravel y MySQL.",
+        "Diseño, programación y despliegue de una API lista para producción para un sitio web corporativo, empleando Laravel y MySQL.",
       highlights: ["Laravel", "MySQL", "APIs empresariales", "Despliegue en producción"],
       company: "Denoba SAS",
     },
@@ -248,12 +296,19 @@ export default function PersonalPortfolio() {
           <div className="space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 leading-snug">
               <span className="block bg-gradient-to-r from-cyan-600 to-cyan-300 bg-clip-text text-transparent">
-                Ingeniero de Software | Web, Cloud & Data
+                Full Stack Developer
               </span>
             </h1>
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed">
-              Construyendo aplicaciones web escalables con React, Node.js y GCP.
+            <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-xl">
+              Construyo sistemas web bien estructurados y fáciles de usar para automatizar procesos, integrar APIs y convertir datos en herramientas operativas.
             </p>
+            <div className="flex flex-wrap gap-2">
+              {["React + TypeScript", "FastAPI & NestJS", "Supabase/Firebase", "GCP & Azure"].map((item) => (
+                <span key={item} className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-slate-300">
+                  {item}
+                </span>
+              ))}
+            </div>
 
             {/* CTA */}
             <div className="flex flex-wrap gap-4">
@@ -274,7 +329,7 @@ export default function PersonalPortfolio() {
 
           {/* Badges & Socials - Ajustado para móvil */}
           <div className="flex flex-col items-center md:items-start space-y-6 mt-6 md:mt-0">
-            {/* Tech stack + Arquitectura (Blueprint real) */}
+            {/* Tech stack + mapa de sistema */}
             <ArchitectureShowcase />
 
             {/* Socials */}
@@ -312,18 +367,18 @@ export default function PersonalPortfolio() {
             {/* Columna de texto - Colocada primera en móvil para priorizar contenido */}
             <div className="space-y-6 order-1">
               <p className="text-lg text-slate-600 leading-relaxed">
-                Ingeniero de Software especializado en el diseño y construcción de aplicaciones web multisectoriales,
-                con un enfoque en la creación de soluciones robustas, seguras y fáciles de usar.
+                Soy Full Stack Developer enfocado en construir sistemas web bien estructurados y fáciles de usar.
+                Trabajo sobre todo en soluciones que ordenan procesos, conectan servicios y reducen carga operativa.
               </p>
 
               <p className="text-lg text-slate-600 leading-relaxed">
-                Trabajo con tecnologías modernas como React, TypeScript y Firebase,
-                aplicando buenas prácticas de arquitectura para garantizar escalabilidad y mantenibilidad.
+                He desarrollado plataformas de gestión inmobiliaria, sistemas para manufactura industrial y soluciones financieras,
+                integrando APIs externas, bureaus de crédito, notificaciones, análisis de datos, reportes y flujos de automatización.
               </p>
 
               <p className="text-lg text-slate-600 leading-relaxed">
-                He liderado la implementación de APIs optimizadas y su despliegue en entornos serverless y Kubernetes sobre Google Cloud.
-                También cuento con experiencia en la integración de servicios de inteligencia artificial y en el desarrollo de flujos de automatización.
+                Me enfoco en buenas prácticas de desarrollo: arquitecturas escalables, APIs RESTful documentadas y versionadas,
+                separación de responsabilidades y despliegue en la nube con GCP y Azure.
               </p>
 
               {/* Estadísticas en formato más atractivo */}
@@ -348,9 +403,9 @@ export default function PersonalPortfolio() {
                       Ezequiel Cruz
                     </h3>
                   </div>
-                  <p className="text-slate-600 font-medium mb-2">Ingeniero de Software</p>
+                  <p className="text-slate-600 font-medium mb-2">Full Stack Developer</p>
                   <p className="text-sm text-slate-500 italic mb-4 border-l-2 border-slate-200 pl-3">
-                    "Construyo soluciones escalables en la nube con IA y datos"
+                    "Sistemas web claros, escalables y pensados para operar mejor"
                   </p>
 
                   {/* Skills pills - Mejor distribuidos */}
@@ -362,10 +417,10 @@ export default function PersonalPortfolio() {
                       TypeScript
                     </span>
                     <span className="px-2 py-1 text-xs rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-medium">
-                      GCP
+                      APIs
                     </span>
                     <span className="px-2 py-1 text-xs rounded-full bg-purple-50 text-purple-700 border border-purple-200 font-medium">
-                      IA
+                      Supabase
                     </span>
                   </div>
                 </div>
@@ -430,8 +485,27 @@ export default function PersonalPortfolio() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">Mi Experiencia</h2>
             <div className="w-24 h-px bg-gradient-to-r from-emerald-400 to-teal-500 mx-auto mb-6" />
             <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto">
-              Desarrollo de ciclo completo (SDLC): de la idea al despliegue, uniendo infraestructura backend con experiencias de usuario excepcionales.
+              Desarrollo de ciclo completo: frontend, backend, datos y despliegue cloud para sistemas que tienen que ser mantenibles, seguros y prácticos.
             </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+            {projectAreas.map((area) => {
+              const IconComponent = area.icon
+              return (
+                <div key={area.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center shrink-0">
+                      <IconComponent className="text-cyan-300" size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold text-slate-100 mb-2">{area.title}</h3>
+                      <p className="text-sm text-slate-400 leading-relaxed">{area.description}</p>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -465,12 +539,12 @@ export default function PersonalPortfolio() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">Conocimientos</h2>
-            <p className="text-slate-400">Stack y prácticas clave que aplico en proyectos reales.</p>
+            <p className="text-slate-400">Stack y prácticas que aplico para construir productos web completos, desde la interfaz hasta producción.</p>
           </div>
 
           {/* Filtros rápidos - Scrollable en móvil */}
           <div className="flex overflow-x-auto pb-4 mb-6 sm:mb-8 sm:flex-wrap sm:justify-center gap-2 hide-scrollbar">
-            {["Kubernetes", "GCP", "Cloud Run", "APIs", "Seguridad", "Terraform", "Observabilidad"].map((tag) => (
+            {["React", "FastAPI", "NestJS", "Supabase", "Firebase", "GCP", "Azure", "Docker", "IA"].map((tag) => (
               <button
                 key={tag}
                 onClick={() => setSelectedNode(tag.toLowerCase().replace(/\s/g, ""))}
@@ -489,76 +563,76 @@ export default function PersonalPortfolio() {
 
           {/* Grid de temas - Ajustado para móvil */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {/* Kubernetes */}
+            {/* Frontend */}
             <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
               <div className="flex items-center gap-3 mb-3">
-                <Boxes className="text-slate-100" />
-                <h3 className="text-lg font-semibold text-slate-100">Kubernetes (GKE)</h3>
+                <Code className="text-slate-100" />
+                <h3 className="text-lg font-semibold text-slate-100">Frontend</h3>
               </div>
               <ul className="text-sm text-slate-300 space-y-2">
-                <li>Despliegues, HPA, ConfigMaps/Secrets, Ingress, PodDisruptionBudgets.</li>
-                <li>Rollouts canarios/blue-green con salud y readiness probes.</li>
-                <li>Autenticación Workload Identity y políticas de red.</li>
+                <li>React, TypeScript y Vite para interfaces modernas y mantenibles.</li>
+                <li>React Query y Supabase JS client para estado remoto y datos.</li>
+                <li>Componentes pensados para claridad, rendimiento y uso diario.</li>
               </ul>
             </motion.div>
-            {/* GCP / Cloud Run */}
+            {/* Backend */}
+            <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="flex items-center gap-3 mb-3">
+                <Server className="text-slate-100" />
+                <h3 className="text-lg font-semibold text-slate-100">Backend</h3>
+              </div>
+              <ul className="text-sm text-slate-300 space-y-2">
+                <li>Python con FastAPI para APIs rápidas, claras y documentadas.</li>
+                <li>Node.js y NestJS para servicios estructurados por módulos.</li>
+                <li>Separación entre rutas, servicios, validación, datos e integraciones.</li>
+              </ul>
+            </motion.div>
+            {/* Datos / BaaS */}
+            <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="flex items-center gap-3 mb-3">
+                <Database className="text-slate-100" />
+                <h3 className="text-lg font-semibold text-slate-100">Datos & BaaS</h3>
+              </div>
+              <ul className="text-sm text-slate-300 space-y-2">
+                <li>PostgreSQL, Supabase, Firebase y MongoDB según el tipo de producto.</li>
+                <li>Prisma para modelado, migraciones y acceso tipado a datos.</li>
+                <li>Supabase RLS para reglas de acceso cercanas a la base de datos.</li>
+              </ul>
+            </motion.div>
+            {/* Cloud & DevOps */}
             <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
               <div className="flex items-center gap-3 mb-3">
                 <Cloud className="text-slate-100" />
-                <h3 className="text-lg font-semibold text-slate-100">GCP & Cloud Run</h3>
+                <h3 className="text-lg font-semibold text-slate-100">Cloud & DevOps</h3>
               </div>
               <ul className="text-sm text-slate-300 space-y-2">
-                <li>Servicios serverless con escalado a cero y revisiones versionadas.</li>
-                <li>VPC Connectors, Pub/Sub triggers, Cloud SQL Auth Proxy.</li>
-                <li>CDN, WAF y políticas de seguridad en el borde.</li>
+                <li>GCP: Cloud Run, Artifact Registry y Google Cloud Storage.</li>
+                <li>Azure: Functions, Blob Storage, Communication Services y PostgreSQL Flexible Server.</li>
+                <li>Railway, Docker y GitHub Actions para despliegues y automatización.</li>
               </ul>
             </motion.div>
-            {/* APIs */}
-            <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <div className="flex items-center gap-3 mb-3">
-                <Network className="text-slate-100" />
-                <h3 className="text-lg font-semibold text-slate-100">Diseño de APIs</h3>
-              </div>
-              <ul className="text-sm text-slate-300 space-y-2">
-                <li>REST/GraphQL, OpenAPI, versionado y breaking-changes safe.</li>
-                <li>Rate limiting, idempotencia, retrys y circuit breakers.</li>
-                <li>Observabilidad por endpoint y SLOs.</li>
-              </ul>
-            </motion.div>
-            {/* Seguridad */}
+            {/* Auth / Seguridad / Storage */}
             <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
               <div className="flex items-center gap-3 mb-3">
                 <Shield className="text-slate-100" />
-                <h3 className="text-lg font-semibold text-slate-100">Seguridad</h3>
+                <h3 className="text-lg font-semibold text-slate-100">Auth, Seguridad & Storage</h3>
               </div>
               <ul className="text-sm text-slate-300 space-y-2">
-                <li>IAM de mínimo privilegio, OAuth2/OIDC, tokens con claims.</li>
-                <li>KMS, rotación de credenciales, gestión de secretos por entorno.</li>
-                <li>Threat modeling básico y hardening de contenedores.</li>
+                <li>Firebase Auth, Firebase Identity Platform y Supabase RLS.</li>
+                <li>Backblaze B2, GCS y Azure Blob Storage para archivos y activos.</li>
+                <li>Linux y LUKS como parte del entorno de trabajo y seguridad local.</li>
               </ul>
             </motion.div>
-            {/* Terraform */}
-            <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <div className="flex items-center gap-3 mb-3">
-                <TerminalSquare className="text-slate-100" />
-                <h3 className="text-lg font-semibold text-slate-100">Terraform (IaC)</h3>
-              </div>
-              <ul className="text-sm text-slate-300 space-y-2">
-                <li>Módulos reutilizables, workspaces por entorno y plan/apply seguro.</li>
-                <li>Validaciones, policy as code (OPA), state remoto en GCS.</li>
-                <li>Integración CI/CD con validaciones y revisiones.</li>
-              </ul>
-            </motion.div>
-            {/* Observabilidad */}
+            {/* IA & APIs */}
             <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
               <div className="flex items-center gap-3 mb-3">
                 <Brain className="text-slate-100" />
-                <h3 className="text-lg font-semibold text-slate-100">Observabilidad</h3>
+                <h3 className="text-lg font-semibold text-slate-100">IA & APIs</h3>
               </div>
               <ul className="text-sm text-slate-300 space-y-2">
-                <li>Logs estructurados, métricas de negocio y latencia p95/p99.</li>
-                <li>Tracing distribuido y paneles de salud por servicio.</li>
-                <li>Alertas orientadas a usuario (error budget / SLO burn rate).</li>
+                <li>OpenAI, Gemini y Anthropic Claude con tool use.</li>
+                <li>Integración de modelos en flujos reales, validaciones y automatizaciones.</li>
+                <li>Diseño de APIs para conectar servicios externos, datos y notificaciones.</li>
               </ul>
             </motion.div>
           </div>
@@ -607,7 +681,7 @@ export default function PersonalPortfolio() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">¡Colaboremos!</h2>
             <div className="w-24 h-px bg-gradient-to-r from-cyan-400 to-sky-400 mx-auto mb-6" />
             <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
-              Abierto a proyectos que involucren cloud, IA/ML y soluciones web end‑to‑end.
+              Abierto a proyectos donde haga falta construir, ordenar o escalar sistemas web end-to-end.
             </p>
           </div>
 
@@ -655,7 +729,7 @@ export default function PersonalPortfolio() {
           </div>
 
           <div className="text-center">
-            <p className="text-slate-400">¡Construyamos algo increíble juntos!</p>
+            <p className="text-slate-400">Construyamos un sistema claro, útil y listo para crecer.</p>
           </div>
         </div>
       </section>
@@ -688,15 +762,14 @@ import {
   Layers,
 } from "lucide-react";
 
-// Arquitectura genérica y funcional para portada (cloud-agnostic).
-// Mantiene foco en prácticas sólidas y piezas comunes sin acoplar a un proyecto.
-// Tecnologías se presentan como ejemplos intercambiables (GCP/AWS/Azure, Auth0/OIDC, S3/GCS/Blob, etc.).
+// Mapa visual de un producto web full stack con datos, cloud e IA.
+// Mantiene el foco en cómo se conectan piezas reales sin vender un perfil de DevOps puro.
 
 export function ArchitectureShowcase() {
   // Definición de tipo mínima para evitar problemas TS con JSX namespace
   type Icon = (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element;
 
-  // Clusters (nodos) por dominios: client, edge, api, auth, storage, realtime, queue, db, ai, docs, iac, runtime, observability, cloud, orchestration
+  // Nodos por dominios de producto: interfaz, APIs, auth, datos, archivos, IA, reportes, CI/CD y cloud.
   const clusters: Array<{
     id: string;
     title: string;
@@ -708,106 +781,106 @@ export function ArchitectureShowcase() {
   }> = [
       {
         id: "client",
-        title: "Frontend",
+        title: "Interfaz Web",
         icon: (p) => <Globe2 {...p} />,
         hue: "from-cyan-500 to-sky-500",
         bullets: [
-          "React + TypeScript (Vite/Next)",
-          "Rutas protegidas (OIDC)",
-          "WebSockets/Server-Sent Events",
+          "React + TypeScript + Vite",
+          "Flujos claros para usuarios internos",
+          "Estado remoto con React Query",
         ],
         x: 70,
         y: 70,
       },
       {
         id: "edge",
-        title: "Edge / WAF / CDN",
+        title: "Entrega Web",
         icon: (p) => <Shield {...p} />,
         hue: "from-emerald-500 to-teal-500",
-        bullets: ["OWASP ruleset", "CDN + cache por ruta", "Security headers"],
+        bullets: ["Hosting y dominios", "Headers y rutas protegidas", "Assets cacheables"],
         x: 260,
         y: 50,
       },
       {
         id: "api",
-        title: "APIs (BFF / Microservicios)",
+        title: "APIs Backend",
         icon: (p) => <Network {...p} />,
         hue: "from-blue-500 to-indigo-500",
         bullets: [
-          "OpenAPI + versionado",
-          "Idempotencia + rate limit",
-          "Canary / Blue-Green",
+          "FastAPI / Node.js / NestJS",
+          "Contratos claros y validacion",
+          "Integraciones con servicios externos",
         ],
         x: 450,
         y: 50,
       },
       {
         id: "auth",
-        title: "Auth / Identity",
+        title: "Autenticacion",
         icon: (p) => <KeyRound {...p} />,
         hue: "from-teal-500 to-cyan-500",
         bullets: [
-          "OIDC (Auth0 / Cognito / Identity Platform)",
-          "RBAC con claims",
-          "Verificación de token en gateway/middleware",
+          "Firebase Auth / Identity Platform",
+          "Supabase RLS",
+          "Permisos por rol y recurso",
         ],
         x: 640,
         y: 50,
       },
       {
         id: "storage",
-        title: "Object Storage",
+        title: "Archivos",
         icon: (p) => <Files {...p} />,
         hue: "from-amber-500 to-yellow-500",
         bullets: [
-          "Signed URLs (upload/download)",
-          "Estructura de carpetas + versionado",
-          "Metadatos + lifecycle (retención)",
+          "Backblaze B2 / GCS / Blob Storage",
+          "Uploads y descargas seguras",
+          "Documentos, evidencias y reportes",
         ],
         x: 70,
         y: 210,
       },
       {
         id: "realtime",
-        title: "Tiempo Real",
+        title: "Notificaciones",
         icon: (p) => <Cable {...p} />,
         hue: "from-lime-500 to-green-500",
         bullets: [
-          "Rooms/canales por recurso",
-          "Progreso de procesos",
-          "Notificaciones de estado",
+          "Eventos de proceso",
+          "Seguimiento de estados",
+          "Contacto con clientes o equipos",
         ],
         x: 260,
         y: 210,
       },
       {
         id: "queue",
-        title: "Eventos / Colas",
+        title: "Procesos",
         icon: (p) => <Boxes {...p} />,
         hue: "from-yellow-500 to-amber-500",
-        bullets: ["Procesos asíncronos", "Retries + DLQ", "Outbox / Event-driven"],
+        bullets: ["Jobs asincronos", "Sincronizacion incremental", "Reintentos controlados"],
         x: 450,
         y: 210,
       },
       {
         id: "db",
-        title: "Datos (SQL/NoSQL)",
+        title: "Datos",
         icon: (p) => <Database {...p} />,
         hue: "from-pink-500 to-rose-500",
         bullets: [
-          "PostgreSQL / MySQL / DocumentDB",
-          "Índices + transacciones",
-          "Backups / PITR",
+          "PostgreSQL / Supabase / Firebase",
+          "Prisma y consultas tipadas",
+          "Modelos relacionales y NoSQL",
         ],
         x: 640,
         y: 210,
       },
       {
         id: "ai",
-        title: "IA / ML",
+        title: "IA Aplicada",
         icon: (p) => <Bot {...p} />,
         hue: "from-violet-500 to-fuchsia-500",
-        bullets: ["OCR + extracción", "Validación JSON + reintentos", "RAG / Analítica"],
+        bullets: ["OpenAI / Claude / Gemini", "Tool use y agentes", "Extraccion y clasificacion de datos"],
         x: 260,
         y: 370,
       },
@@ -816,58 +889,58 @@ export function ArchitectureShowcase() {
         title: "Documentos & Reportes",
         icon: (p) => <FileDown {...p} />,
         hue: "from-sky-500 to-indigo-500",
-        bullets: ["PDF (ReportLab/LaTeX)", "XLSX (utilidades)", "Plantillas reutilizables"],
+        bullets: ["Reportes operativos", "PDF / XLSX", "Indicadores para decisiones"],
         x: 450,
         y: 370,
       },
       {
         id: "iac",
-        title: "IaC & Contenedores",
+        title: "CI/CD",
         icon: (p) => <TerminalSquare {...p} />,
         hue: "from-slate-500 to-gray-500",
-        bullets: ["Terraform módulos", "Docker multi-stage", "State remoto"],
+        bullets: ["GitHub Actions", "Builds con Docker", "Registros privados"],
         x: 70,
         y: 370,
       },
       {
         id: "runtime",
-        title: "Runtime (Containers)",
+        title: "Servicios Cloud",
         icon: (p) => <Server {...p} />,
         hue: "from-indigo-500 to-violet-500",
-        bullets: ["Autoscaling a 0", "Zero-downtime rollouts", "Red privada/VPC"],
+        bullets: ["Cloud Run / Railway", "Azure Functions", "Ambientes productivos"],
         x: 640,
         y: 370,
       },
       {
         id: "observ",
-        title: "Observabilidad",
+        title: "Monitoreo",
         icon: (p) => <Brain {...p} />,
         hue: "from-fuchsia-500 to-pink-500",
-        bullets: ["Logs estructurados", "Métricas p95/p99 + SLOs", "Tracing distribuido"],
+        bullets: ["Logs de aplicacion", "Errores e integraciones", "Alertas de procesos criticos"],
         x: 450,
         y: 450,
       },
       {
         id: "cloud",
-        title: "Plataforma Cloud",
+        title: "Cloud & BaaS",
         icon: (p) => <Cloud {...p} />,
         hue: "from-cyan-500 to-blue-500",
-        bullets: ["VPC / Subnets / FW", "Service Accounts/IAM", "Artifact Registry"],
+        bullets: ["GCP / Azure", "Supabase / Firebase", "Artifact Registry"],
         x: 260,
         y: 450,
       },
       {
         id: "orchestrator",
-        title: "Orquestación de Flujos",
+        title: "Flujos de Negocio",
         icon: (p) => <Layers {...p} />,
         hue: "from-rose-500 to-orange-500",
-        bullets: ["Pipelines: input → IA → validación", "Reglas por etapa", "Reprocesos controlados"],
+        bullets: ["Entrada -> IA -> validacion", "Reglas por etapa", "Automatizacion financiera y ventas"],
         x: 70,
         y: 450,
       },
     ];
 
-  // Conexiones (aristas) genéricas
+  // Conexiones principales entre piezas del producto.
   const edges: Array<[string, string]> = [
     ["client", "edge"],
     ["edge", "api"],
@@ -875,7 +948,7 @@ export function ArchitectureShowcase() {
     ["api", "storage"],
     ["client", "db"],
     ["api", "queue"],
-    ["queue", "api"], // callbacks/completions
+    ["queue", "api"],
     ["client", "realtime"],
     ["realtime", "api"],
     ["storage", "ai"],
@@ -900,26 +973,25 @@ export function ArchitectureShowcase() {
           {/* Íconos de referencia - Reducidos en móvil */}
           <img src="./react.svg" alt="React" className="h-5 sm:h-6 w-auto" />
           <img src="./typescript.svg" alt="TypeScript" className="h-5 sm:h-6 w-auto" />
+          <img src="./firebase.svg" alt="Firebase" className="h-5 sm:h-6 w-auto" />
           <img src="./docker.svg" alt="Docker" className="h-5 sm:h-6 w-auto" />
-          <img src="./terraform.svg" alt="Terraform" className="hidden sm:block h-5 sm:h-6 w-auto" />
           <img src="./gcloud.svg" alt="Cloud" className="hidden sm:block h-5 sm:h-6 w-auto" />
-          <img src="./kubernetes.svg" alt="Kubernetes" className="h-5 sm:h-6 w-auto" />
         </div>
       </div>
 
       <div className="relative w-full overflow-auto">
         {/* En móvil mostramos una versión simplificada */}
         <div className="block sm:hidden text-center py-3">
-          <p className="text-slate-300 text-sm mb-3">Arquitectura cloud-native para aplicaciones modernas</p>
+          <p className="text-slate-300 text-sm mb-3">Frontend, backend, datos, cloud e IA conectados en productos reales</p>
           <div className="grid grid-cols-3 gap-3">
             {/* Versión móvil simplificada */}
             {[
-              { title: "Frontend", icon: Globe2, color: "from-cyan-500 to-sky-500" },
-              { title: "API/BFF", icon: Network, color: "from-blue-500 to-indigo-500" },
+              { title: "Web", icon: Globe2, color: "from-cyan-500 to-sky-500" },
+              { title: "APIs", icon: Network, color: "from-blue-500 to-indigo-500" },
               { title: "Cloud", icon: Cloud, color: "from-cyan-500 to-blue-500" },
               { title: "Auth", icon: KeyRound, color: "from-teal-500 to-cyan-500" },
-              { title: "Data", icon: Database, color: "from-pink-500 to-rose-500" },
-              { title: "IA/ML", icon: Bot, color: "from-violet-500 to-fuchsia-500" },
+              { title: "Datos", icon: Database, color: "from-pink-500 to-rose-500" },
+              { title: "IA", icon: Bot, color: "from-violet-500 to-fuchsia-500" },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center">
                 <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center mb-2`}>
@@ -932,7 +1004,7 @@ export function ArchitectureShowcase() {
         </div>
 
         {/* Versión desktop completa */}
-        <svg viewBox="0 0 800 520" className="w-full min-w-[760px] hidden sm:block" role="img" aria-label="Diagrama de arquitectura genérica">
+        <svg viewBox="0 0 800 520" className="w-full min-w-[760px] hidden sm:block" role="img" aria-label="Mapa de sistema web full stack con datos, cloud e inteligencia artificial">
           {/* Edges */}
           {edges.map(([a, b], i) => {
             const A = clusters.find((c) => c.id === a)!;
