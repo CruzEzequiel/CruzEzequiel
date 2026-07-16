@@ -11,6 +11,14 @@ import {
   MapPin,
   Menu,
   X,
+  Shield,
+  Network,
+  Server,
+  Boxes,
+  Database,
+  Brain,
+  Cloud,
+  Bot,
 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -291,58 +299,48 @@ export default function PersonalPortfolio() {
           <div className="absolute -bottom-32 -left-24 w-[36rem] h-[36rem] opacity-20 blur-3xl bg-[radial-gradient(ellipse_at_center,theme(colors.indigo.600),transparent_60%)]" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Columna de texto */}
-          <div className="space-y-6">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 leading-snug">
-              <span className="block bg-gradient-to-r from-cyan-600 to-cyan-300 bg-clip-text text-transparent">
-                Full Stack Developer
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 flex flex-col items-center text-center max-w-3xl gap-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 leading-snug">
+            <span className="block bg-gradient-to-r from-cyan-600 to-cyan-300 bg-clip-text text-transparent">
+              Full Stack Developer
+            </span>
+          </h1>
+          <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-xl">
+            Convierto procesos manuales en sistemas web automatizados, con APIs propias e inteligencia artificial integrada.
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {["React + TypeScript", "FastAPI & NestJS", "Supabase/Firebase", "GCP & Azure"].map((item) => (
+              <span key={item} className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-slate-300">
+                {item}
               </span>
-            </h1>
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-xl">
-              Construyo sistemas web bien estructurados y fáciles de usar para automatizar procesos, integrar APIs y convertir datos en herramientas operativas.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {["React + TypeScript", "FastAPI & NestJS", "Supabase/Firebase", "GCP & Azure"].map((item) => (
-                <span key={item} className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-slate-300">
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <div className="flex flex-wrap gap-4">
-              <button
-                onClick={() => scrollToSection('about')}
-                className="px-5 py-2 rounded-full font-medium shadow-sm bg-gradient-to-r from-cyan-600 to-sky-600 text-white hover:from-cyan-500 hover:to-sky-500 focus:outline-none focus:ring-2 focus:ring-cyan-400/60 transition"
-              >
-                Conoce más
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="px-5 py-2 rounded-full font-medium border border-white/10 bg-white/5 text-slate-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-slate-300/20 transition"
-              >
-                Contactar
-              </button>
-            </div>
+            ))}
           </div>
 
-          {/* Badges & Socials - Ajustado para móvil */}
-          <div className="flex flex-col items-center md:items-start space-y-6 mt-6 md:mt-0">
-            {/* Tech stack + mapa de sistema */}
-            <ArchitectureShowcase />
-
-            {/* Socials */}
-            <div className="flex space-x-4">
-              <a href="https://github.com/CruzEzequiel" aria-label="GitHub" target="_blank" className="p-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
-                <GithubIcon className="h-5 w-5 text-slate-200" />
-              </a>
-              <a href="https://linkedin.com/in/CruzEzequiel" aria-label="LinkedIn" target="_blank" className="p-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
-                <LinkedinIcon className="h-5 w-5 text-slate-200" />
-              </a>
-            </div>
+          {/* CTA */}
+          <div className="flex flex-wrap justify-center gap-4">
+            <button
+              onClick={() => scrollToSection('about')}
+              className="px-5 py-2 rounded-full font-medium shadow-sm bg-gradient-to-r from-cyan-600 to-sky-600 text-white hover:from-cyan-500 hover:to-sky-500 focus:outline-none focus:ring-2 focus:ring-cyan-400/60 transition"
+            >
+              Conoce más
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="px-5 py-2 rounded-full font-medium border border-white/10 bg-white/5 text-slate-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-slate-300/20 transition"
+            >
+              Contactar
+            </button>
           </div>
 
+          {/* Socials */}
+          <div className="flex space-x-4">
+            <a href="https://github.com/CruzEzequiel" aria-label="GitHub" target="_blank" className="p-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+              <GithubIcon className="h-5 w-5 text-slate-200" />
+            </a>
+            <a href="https://linkedin.com/in/CruzEzequiel" aria-label="LinkedIn" target="_blank" className="p-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+              <LinkedinIcon className="h-5 w-5 text-slate-200" />
+            </a>
+          </div>
         </div>
 
         {/* Scroll indicator */}
@@ -742,330 +740,4 @@ export default function PersonalPortfolio() {
       </footer>
     </div>
   )
-}
-import React from "react";
-import {
-  Shield,
-  Network,
-  KeyRound,
-  Server,
-  Boxes,
-  Database,
-  TerminalSquare,
-  Brain,
-  Cloud,
-  Globe2,
-  Bot,
-  Files,
-  FileDown,
-  Cable,
-  Layers,
-} from "lucide-react";
-
-// Mapa visual de un producto web full stack con datos, cloud e IA.
-// Mantiene el foco en cómo se conectan piezas reales sin vender un perfil de DevOps puro.
-
-export function ArchitectureShowcase() {
-  // Definición de tipo mínima para evitar problemas TS con JSX namespace
-  type Icon = (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element;
-
-  // Nodos por dominios de producto: interfaz, APIs, auth, datos, archivos, IA, reportes, CI/CD y cloud.
-  const clusters: Array<{
-    id: string;
-    title: string;
-    icon: Icon;
-    hue: string; // tailwind gradient from-to
-    bullets: string[];
-    x: number;
-    y: number;
-  }> = [
-      {
-        id: "client",
-        title: "Interfaz Web",
-        icon: (p) => <Globe2 {...p} />,
-        hue: "from-cyan-500 to-sky-500",
-        bullets: [
-          "React + TypeScript + Vite",
-          "Flujos claros para usuarios internos",
-          "Estado remoto con React Query",
-        ],
-        x: 70,
-        y: 70,
-      },
-      {
-        id: "edge",
-        title: "Entrega Web",
-        icon: (p) => <Shield {...p} />,
-        hue: "from-emerald-500 to-teal-500",
-        bullets: ["Hosting y dominios", "Headers y rutas protegidas", "Assets cacheables"],
-        x: 260,
-        y: 50,
-      },
-      {
-        id: "api",
-        title: "APIs Backend",
-        icon: (p) => <Network {...p} />,
-        hue: "from-blue-500 to-indigo-500",
-        bullets: [
-          "FastAPI / Node.js / NestJS",
-          "Contratos claros y validacion",
-          "Integraciones con servicios externos",
-        ],
-        x: 450,
-        y: 50,
-      },
-      {
-        id: "auth",
-        title: "Autenticacion",
-        icon: (p) => <KeyRound {...p} />,
-        hue: "from-teal-500 to-cyan-500",
-        bullets: [
-          "Firebase Auth / Identity Platform",
-          "Supabase RLS",
-          "Permisos por rol y recurso",
-        ],
-        x: 640,
-        y: 50,
-      },
-      {
-        id: "storage",
-        title: "Archivos",
-        icon: (p) => <Files {...p} />,
-        hue: "from-amber-500 to-yellow-500",
-        bullets: [
-          "Backblaze B2 / GCS / Blob Storage",
-          "Uploads y descargas seguras",
-          "Documentos, evidencias y reportes",
-        ],
-        x: 70,
-        y: 210,
-      },
-      {
-        id: "realtime",
-        title: "Notificaciones",
-        icon: (p) => <Cable {...p} />,
-        hue: "from-lime-500 to-green-500",
-        bullets: [
-          "Eventos de proceso",
-          "Seguimiento de estados",
-          "Contacto con clientes o equipos",
-        ],
-        x: 260,
-        y: 210,
-      },
-      {
-        id: "queue",
-        title: "Procesos",
-        icon: (p) => <Boxes {...p} />,
-        hue: "from-yellow-500 to-amber-500",
-        bullets: ["Jobs asincronos", "Sincronizacion incremental", "Reintentos controlados"],
-        x: 450,
-        y: 210,
-      },
-      {
-        id: "db",
-        title: "Datos",
-        icon: (p) => <Database {...p} />,
-        hue: "from-pink-500 to-rose-500",
-        bullets: [
-          "PostgreSQL / Supabase / Firebase",
-          "Prisma y consultas tipadas",
-          "Modelos relacionales y NoSQL",
-        ],
-        x: 640,
-        y: 210,
-      },
-      {
-        id: "ai",
-        title: "IA Aplicada",
-        icon: (p) => <Bot {...p} />,
-        hue: "from-violet-500 to-fuchsia-500",
-        bullets: ["OpenAI / Claude / Gemini", "Tool use y agentes", "Extraccion y clasificacion de datos"],
-        x: 260,
-        y: 370,
-      },
-      {
-        id: "docs",
-        title: "Documentos & Reportes",
-        icon: (p) => <FileDown {...p} />,
-        hue: "from-sky-500 to-indigo-500",
-        bullets: ["Reportes operativos", "PDF / XLSX", "Indicadores para decisiones"],
-        x: 450,
-        y: 370,
-      },
-      {
-        id: "iac",
-        title: "CI/CD",
-        icon: (p) => <TerminalSquare {...p} />,
-        hue: "from-slate-500 to-gray-500",
-        bullets: ["GitHub Actions", "Builds con Docker", "Registros privados"],
-        x: 70,
-        y: 370,
-      },
-      {
-        id: "runtime",
-        title: "Servicios Cloud",
-        icon: (p) => <Server {...p} />,
-        hue: "from-indigo-500 to-violet-500",
-        bullets: ["Cloud Run / Railway", "Azure Functions", "Ambientes productivos"],
-        x: 640,
-        y: 370,
-      },
-      {
-        id: "observ",
-        title: "Monitoreo",
-        icon: (p) => <Brain {...p} />,
-        hue: "from-fuchsia-500 to-pink-500",
-        bullets: ["Logs de aplicacion", "Errores e integraciones", "Alertas de procesos criticos"],
-        x: 450,
-        y: 450,
-      },
-      {
-        id: "cloud",
-        title: "Cloud & BaaS",
-        icon: (p) => <Cloud {...p} />,
-        hue: "from-cyan-500 to-blue-500",
-        bullets: ["GCP / Azure", "Supabase / Firebase", "Artifact Registry"],
-        x: 260,
-        y: 450,
-      },
-      {
-        id: "orchestrator",
-        title: "Flujos de Negocio",
-        icon: (p) => <Layers {...p} />,
-        hue: "from-rose-500 to-orange-500",
-        bullets: ["Entrada -> IA -> validacion", "Reglas por etapa", "Automatizacion financiera y ventas"],
-        x: 70,
-        y: 450,
-      },
-    ];
-
-  // Conexiones principales entre piezas del producto.
-  const edges: Array<[string, string]> = [
-    ["client", "edge"],
-    ["edge", "api"],
-    ["api", "auth"],
-    ["api", "storage"],
-    ["client", "db"],
-    ["api", "queue"],
-    ["queue", "api"],
-    ["client", "realtime"],
-    ["realtime", "api"],
-    ["storage", "ai"],
-    ["ai", "docs"],
-    ["docs", "storage"],
-    ["iac", "runtime"],
-    ["iac", "db"],
-    ["iac", "storage"],
-    ["cloud", "runtime"],
-    ["cloud", "db"],
-    ["cloud", "storage"],
-    ["observ", "api"],
-    ["observ", "runtime"],
-    ["orchestrator", "ai"],
-    ["orchestrator", "queue"],
-  ];
-
-  return (
-    <div className="w-full rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4 md:p-6">
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2 sm:gap-3 opacity-90">
-          {/* Íconos de referencia - Reducidos en móvil */}
-          <img src="./react.svg" alt="React" className="h-5 sm:h-6 w-auto" />
-          <img src="./typescript.svg" alt="TypeScript" className="h-5 sm:h-6 w-auto" />
-          <img src="./firebase.svg" alt="Firebase" className="h-5 sm:h-6 w-auto" />
-          <img src="./docker.svg" alt="Docker" className="h-5 sm:h-6 w-auto" />
-          <img src="./gcloud.svg" alt="Cloud" className="hidden sm:block h-5 sm:h-6 w-auto" />
-        </div>
-      </div>
-
-      <div className="relative w-full overflow-auto">
-        {/* En móvil mostramos una versión simplificada */}
-        <div className="block sm:hidden text-center py-3">
-          <p className="text-slate-300 text-sm mb-3">Frontend, backend, datos, cloud e IA conectados en productos reales</p>
-          <div className="grid grid-cols-3 gap-3">
-            {/* Versión móvil simplificada */}
-            {[
-              { title: "Web", icon: Globe2, color: "from-cyan-500 to-sky-500" },
-              { title: "APIs", icon: Network, color: "from-blue-500 to-indigo-500" },
-              { title: "Cloud", icon: Cloud, color: "from-cyan-500 to-blue-500" },
-              { title: "Auth", icon: KeyRound, color: "from-teal-500 to-cyan-500" },
-              { title: "Datos", icon: Database, color: "from-pink-500 to-rose-500" },
-              { title: "IA", icon: Bot, color: "from-violet-500 to-fuchsia-500" },
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center mb-2`}>
-                  <item.icon className="text-white w-5 h-5" />
-                </div>
-                <span className="text-[10px] text-slate-300">{item.title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Versión desktop completa */}
-        <svg viewBox="0 0 800 520" className="w-full min-w-[760px] hidden sm:block" role="img" aria-label="Mapa de sistema web full stack con datos, cloud e inteligencia artificial">
-          {/* Edges */}
-          {edges.map(([a, b], i) => {
-            const A = clusters.find((c) => c.id === a)!;
-            const B = clusters.find((c) => c.id === b)!;
-            return (
-              <line
-                key={`edge-${i}-${a}-${b}`}
-                x1={A.x}
-                y1={A.y}
-                x2={B.x}
-                y2={B.y}
-                stroke="rgba(255,255,255,0.25)"
-                strokeWidth={2}
-                markerEnd="url(#arrow)"
-              />
-            );
-          })}
-
-          {/* Arrow marker */}
-          <defs>
-            <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L6,3 z" fill="rgba(255,255,255,0.35)" />
-            </marker>
-          </defs>
-
-          {/* Nodes */}
-          {clusters.map((c) => (
-            <g key={c.id}>
-              {/* halo */}
-              <circle cx={c.x} cy={c.y} r="36" className="fill-white/[0.06]" />
-              {/* body */}
-              <circle cx={c.x} cy={c.y} r="28" className={`fill-transparent stroke-white/20`} />
-              {/* icon */}
-              <foreignObject x={c.x - 18} y={c.y - 18} width="36" height="36">
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-white/10 to-white/0 border border-white/10">
-                  <c.icon className="text-white/90 w-4 h-4" />
-                </div>
-              </foreignObject>
-
-              {/* label */}
-              <foreignObject x={c.x - 100} y={c.y + 22} width="200" height="110">
-                <div className="text-center">
-                  <div
-                    className={`inline-block text-[11px] px-2 py-0.5 rounded-full bg-gradient-to-r ${c.hue} text-white shadow-sm`}
-                  >
-                    {c.title}
-                  </div>
-                  <div className="mt-2 text-[11px] text-slate-300/90 leading-5 bg-white/5 border border-white/10 rounded-md px-2 py-2 opacity-0 hover:opacity-100 transition-opacity">
-                    <ul className="text-left list-disc list-inside space-y-0.5">
-                      {c.bullets.map((b, i) => (
-                        <li key={`${c.id}-b-${i}`}>{b}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </foreignObject>
-            </g>
-          ))}
-        </svg>
-      </div>
-
-    </div>
-  );
 }
