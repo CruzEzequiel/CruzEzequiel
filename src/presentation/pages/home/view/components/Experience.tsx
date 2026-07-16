@@ -68,7 +68,7 @@ export default function Experience() {
             <div key={index} className="relative">
               <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                 <div className="md:w-1/3">
-                  <div className="bg-gradient-to-r from-slate-100 to-slate-50 rounded-lg p-4 border-l-4 border-cyan-500">
+                  <div className="bg-slate-50 rounded-lg p-4 border-l-4 border-cyan-500">
                     <div className="text-sm text-cyan-600 font-semibold">{exp.period}</div>
                     <div className="text-xl font-bold text-slate-800">{exp.title}</div>
                     <div className="text-slate-500">{exp.company}</div>

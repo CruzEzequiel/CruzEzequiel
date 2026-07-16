@@ -4,7 +4,7 @@ export default function About() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-neutral-900">Acerca de Mí</h2>
-          <div className="w-24 h-px bg-gradient-to-r from-sky-400 to-cyan-500 mx-auto mb-6" />
+          <div className="w-24 h-px bg-cyan-500 mx-auto mb-6" />
         </div>
 
         <div className="space-y-6">

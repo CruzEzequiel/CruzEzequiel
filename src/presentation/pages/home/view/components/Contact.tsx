@@ -6,7 +6,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">¡Colaboremos!</h2>
-          <div className="w-24 h-px bg-gradient-to-r from-cyan-400 to-sky-400 mx-auto mb-6" />
+          <div className="w-24 h-px bg-cyan-400 mx-auto mb-6" />
           <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
             Abierto a proyectos donde haga falta construir, ordenar o escalar sistemas web end-to-end.
           </p>

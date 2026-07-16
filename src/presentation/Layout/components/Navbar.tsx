@@ -51,7 +51,7 @@ export default function Navbar({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="md:hidden">
-              <span className="text-lg font-semibold bg-gradient-to-r from-cyan-500 to-sky-400 bg-clip-text text-transparent">
+              <span className="text-lg font-semibold text-cyan-400">
                 Ezequiel Cruz
               </span>
             </div>

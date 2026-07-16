@@ -39,7 +39,7 @@ export default function Expertise() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">Áreas de Proyecto</h2>
-          <div className="w-24 h-px bg-gradient-to-r from-emerald-400 to-teal-500 mx-auto mb-6" />
+          <div className="w-24 h-px bg-cyan-500 mx-auto mb-6" />
           <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto">
             Desarrollo de ciclo completo: frontend, backend, datos y despliegue cloud para sistemas que tienen que ser mantenibles, seguros y prácticos.
           </p>
