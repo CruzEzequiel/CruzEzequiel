@@ -35,7 +35,7 @@ const projectAreas = [
 
 export default function Expertise() {
   return (
-    <section id="expertise" className="py-16 sm:py-20 bg-neutral-925">
+    <section id="expertise" className="py-16 sm:py-20 bg-neutral-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">Áreas de Proyecto</h2>
