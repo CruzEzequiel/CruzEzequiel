@@ -15,10 +15,10 @@ export default function Contact() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
           <a
             href="mailto:cruzezequiel017@gmail.com"
-            className="group rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1"
+            className="group rounded-lg p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
           >
-            <div className="w-14 h-14 bg-gradient-to-r from-rose-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Mail className="text-white" size={24} />
+            <div className="w-14 h-14 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
+              <Mail className="text-cyan-400" size={24} />
             </div>
             <h3 className="text-lg font-semibold mb-1">Email</h3>
             <p className="text-slate-300 text-sm break-words">cruzezequiel017@gmail.com</p>
@@ -28,10 +28,10 @@ export default function Contact() {
             href="https://www.linkedin.com/in/cruzezequiel/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1"
+            className="group rounded-lg p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
           >
-            <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Linkedin className="text-white" size={24} />
+            <div className="w-14 h-14 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
+              <Linkedin className="text-cyan-400" size={24} />
             </div>
             <h3 className="text-lg font-semibold mb-1">LinkedIn</h3>
             <p className="text-slate-300 flex items-center gap-1 text-sm">
@@ -43,10 +43,10 @@ export default function Contact() {
             href="https://github.com/CruzEzequiel"
             target="_blank"
             rel="noopener noreferrer"
-            className="group rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1"
+            className="group rounded-lg p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
           >
-            <div className="w-14 h-14 bg-gradient-to-r from-violet-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Github className="text-white" size={24} />
+            <div className="w-14 h-14 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
+              <Github className="text-cyan-400" size={24} />
             </div>
             <h3 className="text-lg font-semibold mb-1">GitHub</h3>
             <p className="text-slate-300 flex items-center gap-1 text-sm">

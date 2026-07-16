@@ -49,7 +49,7 @@ export default function Expertise() {
           {projectAreas.map((area) => {
             const IconComponent = area.icon
             return (
-              <div key={area.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div key={area.title} className="rounded-lg border border-white/10 bg-white/5 p-5">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center shrink-0">
                     <IconComponent className="text-cyan-300" size={20} />

@@ -12,24 +12,20 @@ export default function Hero({ onNavigate }: HeroProps) {
         <div className="absolute -bottom-32 -left-24 w-[36rem] h-[36rem] opacity-20 blur-3xl bg-[radial-gradient(ellipse_at_center,theme(colors.indigo.600),transparent_60%)]" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 flex flex-col items-center text-center max-w-3xl gap-6">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 leading-snug">
-          <span className="block bg-gradient-to-r from-cyan-600 to-cyan-300 bg-clip-text text-transparent">
-            Full Stack Developer
-          </span>
-        </h1>
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 flex flex-col items-start text-left max-w-3xl gap-6">
+        <div>
+          <p className="text-lg sm:text-xl font-medium text-slate-300 mb-1">Ezequiel Cruz</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 leading-snug">
+            <span className="block bg-gradient-to-r from-cyan-600 to-cyan-300 bg-clip-text text-transparent">
+              Full Stack Developer
+            </span>
+          </h1>
+        </div>
         <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-xl">
           Convierto procesos manuales en sistemas web automatizados, con APIs propias e inteligencia artificial integrada.
         </p>
-        <div className="flex flex-wrap justify-center gap-2">
-          {["React + TypeScript", "FastAPI & NestJS", "Supabase/Firebase", "GCP & Azure"].map((item) => (
-            <span key={item} className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-slate-300">
-              {item}
-            </span>
-          ))}
-        </div>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap gap-4">
           <button
             onClick={() => onNavigate("about")}
             className="px-5 py-2 rounded-full font-medium shadow-sm bg-gradient-to-r from-cyan-600 to-sky-600 text-white hover:from-cyan-500 hover:to-sky-500 focus:outline-none focus:ring-2 focus:ring-cyan-400/60 transition"

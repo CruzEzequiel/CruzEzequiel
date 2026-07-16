@@ -1,12 +1,7 @@
-import { useState } from "react"
 import { Brain, Cloud, Code, Database, Server, Shield } from "lucide-react"
 import { motion } from "framer-motion"
 
-const FILTER_TAGS = ["React", "FastAPI", "NestJS", "Supabase", "Firebase", "GCP", "Azure", "Docker", "IA"]
-
 export default function Knowledge() {
-  const [selectedNode, setSelectedNode] = useState<string | null>(null)
-
   return (
     <section id="knowledge" className="py-16 sm:py-20 bg-neutral-950 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -15,26 +10,8 @@ export default function Knowledge() {
           <p className="text-slate-400">Stack y prácticas que aplico para construir productos web completos, desde la interfaz hasta producción.</p>
         </div>
 
-        <div className="flex overflow-x-auto pb-4 mb-6 sm:mb-8 sm:flex-wrap sm:justify-center gap-2 hide-scrollbar">
-          {FILTER_TAGS.map((tag) => (
-            <button
-              key={tag}
-              onClick={() => setSelectedNode(tag.toLowerCase().replace(/\s/g, ""))}
-              className={`px-3 py-1 rounded-full text-sm border whitespace-nowrap ${selectedNode === tag.toLowerCase().replace(/\s/g, "") ? "bg-white/10 border-white/20" : "border-white/10 hover:bg-white/5"}`}
-            >
-              {tag}
-            </button>
-          ))}
-          <button
-            onClick={() => setSelectedNode(null)}
-            className="px-3 py-1 rounded-full text-sm border border-white/10 hover:bg-white/5 whitespace-nowrap"
-          >
-            Limpiar
-          </button>
-        </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <motion.div whileHover={{ y: -4 }} className="rounded-lg border border-white/10 bg-white/5 p-5">
             <div className="flex items-center gap-3 mb-3">
               <Code className="text-slate-100" />
               <h3 className="text-lg font-semibold text-slate-100">Frontend</h3>
@@ -46,7 +23,7 @@ export default function Knowledge() {
             </ul>
           </motion.div>
 
-          <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <motion.div whileHover={{ y: -4 }} className="rounded-lg border border-white/10 bg-white/5 p-5">
             <div className="flex items-center gap-3 mb-3">
               <Server className="text-slate-100" />
               <h3 className="text-lg font-semibold text-slate-100">Backend</h3>
@@ -58,7 +35,7 @@ export default function Knowledge() {
             </ul>
           </motion.div>
 
-          <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <motion.div whileHover={{ y: -4 }} className="rounded-lg border border-white/10 bg-white/5 p-5">
             <div className="flex items-center gap-3 mb-3">
               <Database className="text-slate-100" />
               <h3 className="text-lg font-semibold text-slate-100">Datos & BaaS</h3>
@@ -70,7 +47,7 @@ export default function Knowledge() {
             </ul>
           </motion.div>
 
-          <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <motion.div whileHover={{ y: -4 }} className="rounded-lg border border-white/10 bg-white/5 p-5">
             <div className="flex items-center gap-3 mb-3">
               <Cloud className="text-slate-100" />
               <h3 className="text-lg font-semibold text-slate-100">Cloud & DevOps</h3>
@@ -82,7 +59,7 @@ export default function Knowledge() {
             </ul>
           </motion.div>
 
-          <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <motion.div whileHover={{ y: -4 }} className="rounded-lg border border-white/10 bg-white/5 p-5">
             <div className="flex items-center gap-3 mb-3">
               <Shield className="text-slate-100" />
               <h3 className="text-lg font-semibold text-slate-100">Auth, Seguridad & Storage</h3>
@@ -94,7 +71,7 @@ export default function Knowledge() {
             </ul>
           </motion.div>
 
-          <motion.div whileHover={{ y: -4 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <motion.div whileHover={{ y: -4 }} className="rounded-lg border border-white/10 bg-white/5 p-5">
             <div className="flex items-center gap-3 mb-3">
               <Brain className="text-slate-100" />
               <h3 className="text-lg font-semibold text-slate-100">IA & APIs</h3>
