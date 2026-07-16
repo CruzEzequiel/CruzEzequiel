@@ -1,31 +1,4 @@
-import { Bot, Boxes, Brain, Cloud, Code, Database, Network, Shield } from "lucide-react"
-
-const skills = [
-  {
-    category: "Frontend",
-    items: ["React", "TypeScript", "Vite", "React Query"],
-    icon: Code,
-    color: "from-cyan-500 to-blue-500",
-  },
-  {
-    category: "Backend",
-    items: ["Python", "FastAPI", "Node.js", "NestJS"],
-    icon: Database,
-    color: "from-emerald-500 to-teal-500",
-  },
-  {
-    category: "Datos & BaaS",
-    items: ["PostgreSQL", "Supabase", "Firebase", "Prisma"],
-    icon: Cloud,
-    color: "from-purple-500 to-indigo-500",
-  },
-  {
-    category: "Cloud, IA & DevOps",
-    items: ["GCP", "Azure", "Docker", "OpenAI"],
-    icon: Brain,
-    color: "from-pink-500 to-rose-500",
-  },
-]
+import { Bot, Boxes, Cloud, Database, Network, Shield } from "lucide-react"
 
 const projectAreas = [
   {
@@ -65,14 +38,14 @@ export default function Expertise() {
     <section id="expertise" className="py-16 sm:py-20 bg-neutral-925">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">Mi Experiencia</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">Áreas de Proyecto</h2>
           <div className="w-24 h-px bg-gradient-to-r from-emerald-400 to-teal-500 mx-auto mb-6" />
           <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto">
             Desarrollo de ciclo completo: frontend, backend, datos y despliegue cloud para sistemas que tienen que ser mantenibles, seguros y prácticos.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projectAreas.map((area) => {
             const IconComponent = area.icon
             return (
@@ -84,30 +57,6 @@ export default function Expertise() {
                   <div>
                     <h3 className="text-base font-semibold text-slate-100 mb-2">{area.title}</h3>
                     <p className="text-sm text-slate-400 leading-relaxed">{area.description}</p>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skills.map((skill, index) => {
-            const IconComponent = skill.icon
-            return (
-              <div key={index} className="group">
-                <div className="rounded-2xl p-6 border border-white/10 bg-white/5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition-all duration-300 transform hover:-translate-y-1">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${skill.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                    <IconComponent className="text-white" size={24} />
-                  </div>
-                  <h3 className="text-lg font-semibold text-slate-100 mb-2">{skill.category}</h3>
-                  <div className="space-y-2">
-                    {skill.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex items-center gap-2">
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${skill.color}`} />
-                        <span className="text-slate-400 text-sm">{item}</span>
-                      </div>
-                    ))}
                   </div>
                 </div>
               </div>
