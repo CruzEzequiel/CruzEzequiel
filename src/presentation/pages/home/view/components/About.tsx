@@ -16,21 +16,17 @@ export default function About() {
           <p className="text-lg text-slate-600 leading-relaxed">
             He desarrollado plataformas de gestión inmobiliaria, sistemas para manufactura industrial y soluciones financieras,
             integrando APIs externas, bureaus de crédito, notificaciones, análisis de datos, reportes y flujos de automatización.
-          </p>
-
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Me enfoco en buenas prácticas de desarrollo: arquitecturas escalables, APIs RESTful documentadas y versionadas,
-            separación de responsabilidades y despliegue en la nube con GCP y Azure.
+            Cuido la arquitectura: capas bien separadas, APIs RESTful documentadas y despliegue en la nube con GCP y Azure.
           </p>
 
           <div className="grid grid-cols-2 gap-4 mt-8">
             <div className="text-center p-5 bg-slate-50 rounded-lg border border-slate-100">
-              <div className="text-3xl font-bold text-cyan-600 mb-1">3+</div>
+              <div className="text-3xl font-bold text-cyan-600 mb-1">4+</div>
               <div className="text-slate-600 font-medium">Años de Experiencia</div>
             </div>
             <div className="text-center p-5 bg-slate-50 rounded-lg border border-slate-100">
-              <div className="text-3xl font-bold text-cyan-600 mb-1">5+</div>
-              <div className="text-slate-600 font-medium">Proyectos de impacto</div>
+              <div className="text-3xl font-bold text-cyan-600 mb-1">7+</div>
+              <div className="text-slate-600 font-medium">Servicios desplegados en la nube</div>
             </div>
           </div>
         </div>

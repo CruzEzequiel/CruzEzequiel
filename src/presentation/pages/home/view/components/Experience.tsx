@@ -16,7 +16,7 @@ const experiences = [
   },
   {
     title: "Desarrollador Web",
-    period: "Enero 2025 - Septiembre 2025",
+    period: "Enero 2025 - Actualidad",
     description:
       "Desarrollo de sistemas web para el sector financiero, automatizando procesos internos e integrando servicios externos, datos e inteligencia artificial.",
     highlights: [
@@ -35,11 +35,11 @@ const experiences = [
     description:
       "Soporte especializado en servicios empresariales de inteligencia artificial en Azure, incluyendo ChatGPT, Document AI e integraciones cloud para clientes.",
     highlights: ["Azure AI", "ChatGPT", "Document AI", "Soporte técnico"],
-    company: "Microsoft",
+    company: "Soporte a Microsoft · vía empresa contratista",
   },
   {
     title: "Desarrollador Backend",
-    period: "",
+    period: "Diciembre 2021 - Julio 2022",
     description:
       "Desarrollo de microservicios en Python para exponer modelos de IA en Google Cloud Platform, utilizando Docker y gestionando comunicación, autenticación e integración vía API.",
     highlights: ["Python", "Microservicios", "Google Cloud", "Docker", "APIs seguras"],
@@ -47,11 +47,11 @@ const experiences = [
   },
   {
     title: "Desarrollador Backend",
-    period: "",
+    period: "Febrero 2021 - Agosto 2021",
     description:
-      "Diseño, programación y despliegue de una API lista para producción para un sitio web corporativo, empleando Laravel y MySQL.",
-    highlights: ["Laravel", "MySQL", "APIs empresariales", "Despliegue en producción"],
-    company: "Denoba SAS",
+      "Estancia profesional: backend de un sitio web corporativo y de una aplicación web, con API lista para producción en Laravel y autenticación con Sanctum, y una app móvil con Flutter. Incluyó integración con WhatsApp Business.",
+    highlights: ["Laravel", "Sanctum", "Flutter", "MySQL", "WhatsApp Business", "Despliegue en producción"],
+    company: "Denoba SAS · Estancia profesional",
   },
 ]
 

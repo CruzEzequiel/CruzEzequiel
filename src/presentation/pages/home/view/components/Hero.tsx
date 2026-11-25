@@ -1,10 +1,13 @@
-import { ChevronDown, GithubIcon, LinkedinIcon } from "lucide-react"
+import { ChevronDown, Download, GithubIcon, LinkedinIcon } from "lucide-react"
+import { CV_URL, useCvAvailable } from "../../cv"
 
 interface HeroProps {
   onNavigate: (sectionId: string) => void
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
+  const cvAvailable = useCvAvailable()
+
   return (
     <section id="home" className="pt-28 md:pt-32 pb-20 relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
@@ -14,10 +17,10 @@ export default function Hero({ onNavigate }: HeroProps) {
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 flex flex-col items-start text-left max-w-3xl gap-6">
         <div>
-          <p className="text-lg sm:text-xl font-medium text-slate-300 mb-1">Ezequiel Cruz</p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-100 leading-snug">
-            Full Stack Developer
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-100 leading-tight">
+            Ezequiel Cruz
           </h1>
+          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-cyan-300 mt-2">Full Stack Developer</p>
         </div>
         <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-xl">
           Convierto procesos manuales en sistemas web automatizados, con APIs propias e inteligencia artificial integrada.
@@ -36,6 +39,15 @@ export default function Hero({ onNavigate }: HeroProps) {
           >
             Contactar
           </button>
+          {cvAvailable && (
+            <a
+              href={CV_URL}
+              download
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full font-medium border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 focus:outline-none focus:ring-2 focus:ring-cyan-400/60 transition"
+            >
+              <Download size={16} /> Descargar CV
+            </a>
+          )}
         </div>
 
         <div className="flex space-x-4">

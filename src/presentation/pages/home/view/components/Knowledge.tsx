@@ -18,7 +18,7 @@ export default function Knowledge() {
             </div>
             <ul className="text-sm text-slate-300 space-y-2">
               <li>React, TypeScript y Vite para interfaces modernas y mantenibles.</li>
-              <li>React Query y Supabase JS client para estado remoto y datos.</li>
+              <li>Supabase JS client para autenticación, datos y almacenamiento desde el cliente.</li>
               <li>Componentes pensados para claridad, rendimiento y uso diario.</li>
             </ul>
           </motion.div>
@@ -30,7 +30,7 @@ export default function Knowledge() {
             </div>
             <ul className="text-sm text-slate-300 space-y-2">
               <li>Python con FastAPI para APIs rápidas, claras y documentadas.</li>
-              <li>Node.js y NestJS para servicios estructurados por módulos.</li>
+              <li>Node.js para servicios y funciones de backend, y Playwright para scrapers y automatización de portales.</li>
               <li>Separación entre rutas, servicios, validación, datos e integraciones.</li>
             </ul>
           </motion.div>
@@ -42,7 +42,6 @@ export default function Knowledge() {
             </div>
             <ul className="text-sm text-slate-300 space-y-2">
               <li>PostgreSQL, Supabase, Firebase y MongoDB según el tipo de producto.</li>
-              <li>Prisma para modelado, migraciones y acceso tipado a datos.</li>
               <li>Supabase RLS para reglas de acceso cercanas a la base de datos.</li>
             </ul>
           </motion.div>
@@ -54,7 +53,7 @@ export default function Knowledge() {
             </div>
             <ul className="text-sm text-slate-300 space-y-2">
               <li>GCP: Cloud Run, Artifact Registry y Google Cloud Storage.</li>
-              <li>Azure: Functions, Blob Storage, Communication Services y PostgreSQL Flexible Server.</li>
+              <li>Azure: Functions, Blob Storage y Communication Services.</li>
               <li>Railway, Docker y GitHub Actions para despliegues y automatización.</li>
             </ul>
           </motion.div>
@@ -67,7 +66,7 @@ export default function Knowledge() {
             <ul className="text-sm text-slate-300 space-y-2">
               <li>Firebase Auth, Firebase Identity Platform y Supabase RLS.</li>
               <li>Backblaze B2, GCS y Azure Blob Storage para archivos y activos.</li>
-              <li>Linux y LUKS como parte del entorno de trabajo y seguridad local.</li>
+              <li>Linux como entorno de trabajo diario.</li>
             </ul>
           </motion.div>
 

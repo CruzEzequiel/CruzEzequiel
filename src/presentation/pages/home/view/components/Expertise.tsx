@@ -23,7 +23,7 @@ const projectAreas = [
   },
   {
     title: "Integración de sistemas",
-    description: "Sincronización incremental entre puntos de venta y plataformas propias para mantener datos operativos al día.",
+    description: "Sincronización programada de fuentes externas (índices económicos, sistemas contables) y scrapers de portales públicos hacia plataformas propias, para mantener los datos al día.",
     icon: Network,
   },
   {

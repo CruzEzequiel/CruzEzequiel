@@ -1,6 +1,9 @@
-import { ExternalLink, Github, Linkedin, Mail } from "lucide-react"
+import { Download, ExternalLink, Github, Linkedin, Mail } from "lucide-react"
+import { CV_URL, useCvAvailable } from "../../cv"
 
 export default function Contact() {
+  const cvAvailable = useCvAvailable()
+
   return (
     <section id="contact" className="py-16 sm:py-20 bg-gradient-to-br from-neutral-950 to-neutral-900 text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -12,7 +15,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+        <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12 ${cvAvailable ? "lg:grid-cols-4" : "md:grid-cols-3"}`}>
           <a
             href="mailto:cruzezequiel017@gmail.com"
             className="group rounded-lg p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
@@ -53,6 +56,20 @@ export default function Contact() {
               Ver proyectos <ExternalLink size={14} />
             </p>
           </a>
+
+          {cvAvailable && (
+            <a
+              href={CV_URL}
+              download
+              className="group rounded-lg p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
+            >
+              <div className="w-14 h-14 bg-cyan-500/10 border border-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
+                <Download className="text-cyan-400" size={24} />
+              </div>
+              <h3 className="text-lg font-semibold mb-1">Currículum</h3>
+              <p className="text-slate-300 text-sm">Descargar PDF</p>
+            </a>
+          )}
         </div>
 
         <div className="text-center">
