@@ -8,7 +8,7 @@ Convierto procesos manuales en sistemas web automatizados, con APIs propias e IA
 
 - **Plataformas web completas** con React, TypeScript y Supabase, con roles, permisos y bitácora de auditoría.
 - **Automatización e integraciones:** scrapers con Playwright, sincronización de datos externos y correos automáticos con Azure Communication Services.
-- **IA aplicada:** asistentes con function calling sobre datos reales y adaptación de documentos con Claude, siempre con validaciones para no inventar información.
+- **IA aplicada:** un asistente conversacional que consulta datos reales con function calling, y análisis de documentos con Gemini y OpenAI.
 - **Servicios en la nube** con FastAPI, Docker y CI/CD, desplegados en Cloud Run y Railway.
 
 ## Stack
